@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   resources :comments
   get 'pages/info'
 
@@ -13,7 +14,7 @@ root :to => redirect('/ideas')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+ resource :user, only: [:edit, :update]
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
